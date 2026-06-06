@@ -1,0 +1,23 @@
+{
+  "name": "aplikasi-absensi-karyawan",
+  "version": "1.0.0",
+  "description": "Web app absensi karyawan lengkap dengan geofencing, shift, izin/cuti, overtime, laporan, audit, dan export.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node server.js --seed-only"
+  },
+  "keywords": [
+    "absensi",
+    "hris",
+    "attendance",
+    "geofencing",
+    "payroll"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
