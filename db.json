@@ -1,0 +1,826 @@
+{
+  "meta": {
+    "version": 1,
+    "createdAt": "2026-06-06T16:24:43.143Z",
+    "nextIds": {
+      "users": 8,
+      "attendances": 7,
+      "leaves": 3,
+      "overtimes": 3,
+      "shifts": 4,
+      "holidays": 4,
+      "departments": 5,
+      "branches": 3,
+      "announcements": 4,
+      "auditLogs": 18,
+      "notifications": 14,
+      "shiftSchedules": 8
+    }
+  },
+  "company": {
+    "name": "Nusantara Attendance",
+    "timezone": "Asia/Jakarta",
+    "annualLeaveDays": 12
+  },
+  "settings": {
+    "geofenceDefaultRadiusMeters": 100,
+    "workFromHomeRequiresApproval": true,
+    "maxOvertimeHoursPerDay": 4,
+    "maxOvertimeHoursPerWeek": 18,
+    "overtimeRatePerHour": 50000,
+    "reminderMinutesAfterStart": 30,
+    "faceRecognitionEnabled": false
+  },
+  "branches": [
+    {
+      "id": 1,
+      "name": "Kantor Pusat Jakarta",
+      "address": "Jl. Sudirman No. 10, Jakarta",
+      "lat": -6.2088,
+      "lng": 106.8456,
+      "radiusMeters": 100
+    },
+    {
+      "id": 2,
+      "name": "Cabang Bandung",
+      "address": "Jl. Asia Afrika No. 5, Bandung",
+      "lat": -6.9175,
+      "lng": 107.6191,
+      "radiusMeters": 120
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Executive"
+    },
+    {
+      "id": 2,
+      "name": "Human Resource"
+    },
+    {
+      "id": 3,
+      "name": "Engineering"
+    },
+    {
+      "id": 4,
+      "name": "Sales"
+    }
+  ],
+  "shifts": [
+    {
+      "id": 1,
+      "name": "Pagi",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "toleranceMinutes": 15,
+      "breakMinutes": 60
+    },
+    {
+      "id": 2,
+      "name": "Siang",
+      "startTime": "13:00",
+      "endTime": "22:00",
+      "toleranceMinutes": 10,
+      "breakMinutes": 60
+    },
+    {
+      "id": 3,
+      "name": "Malam",
+      "startTime": "22:00",
+      "endTime": "06:00",
+      "toleranceMinutes": 10,
+      "breakMinutes": 60
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "nik": "SA-001",
+      "name": "Alya Prameswari",
+      "email": "super@company.test",
+      "role": "super_admin",
+      "departmentId": 1,
+      "branchId": 1,
+      "shiftId": 1,
+      "managerId": null,
+      "position": "Super Admin",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 12,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-1-super_admin",
+      "passwordHash": "c36c0ef492999ca5bec20195de222da6498a3c80a0b10535374a4f005225272e",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 2,
+      "nik": "HR-001",
+      "name": "Bima Rahadian",
+      "email": "hrd@company.test",
+      "role": "hrd_admin",
+      "departmentId": 2,
+      "branchId": 1,
+      "shiftId": 1,
+      "managerId": 1,
+      "position": "HRD Admin",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 12,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-2-hrd_admin",
+      "passwordHash": "651bc75118e014a3290f5e5977dcaf6517b2dfd96ba9ce8f1d10581e74bee32e",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 3,
+      "nik": "MG-001",
+      "name": "Citra Lestari",
+      "email": "manager@company.test",
+      "role": "manager",
+      "departmentId": 3,
+      "branchId": 1,
+      "shiftId": 1,
+      "managerId": 2,
+      "position": "Engineering Manager",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 10,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-3-manager",
+      "passwordHash": "1f5ed314aa5c182155b4c338d01a039268ddeceda7d434cd0abea258ffa155b8",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 4,
+      "nik": "EMP-001",
+      "name": "Dhani Saputra",
+      "email": "karyawan@company.test",
+      "role": "employee",
+      "departmentId": 3,
+      "branchId": 1,
+      "shiftId": 1,
+      "managerId": 3,
+      "position": "Frontend Engineer",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 8,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-4-employee",
+      "passwordHash": "f5ab3e3c77c3557564997f187218b15b9cef3eaf80e9959aabf893cb88629b93",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 5,
+      "nik": "EMP-002",
+      "name": "Eka Wulandari",
+      "email": "eka@company.test",
+      "role": "employee",
+      "departmentId": 3,
+      "branchId": 1,
+      "shiftId": 2,
+      "managerId": 3,
+      "position": "Backend Engineer",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 12,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-5-employee",
+      "passwordHash": "af5c4ffcab312d277b4d7b50ed3df403797ef5e1cf6a12208697edb65005b530",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 6,
+      "nik": "SL-001",
+      "name": "Farhan Nugraha",
+      "email": "sales@company.test",
+      "role": "manager",
+      "departmentId": 4,
+      "branchId": 2,
+      "shiftId": 1,
+      "managerId": 2,
+      "position": "Sales Manager",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 12,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-6-manager",
+      "passwordHash": "751d99fff7e89004d8395e6003e66d6864c0773c5bbf64d2843668f606963fab",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 7,
+      "nik": "EMP-003",
+      "name": "Gita Permata",
+      "email": "gita@company.test",
+      "role": "employee",
+      "departmentId": 4,
+      "branchId": 2,
+      "shiftId": 1,
+      "managerId": 6,
+      "position": "Account Executive",
+      "phone": "0812-0000-0000",
+      "address": "Jakarta",
+      "photoUrl": "",
+      "leaveBalance": 11,
+      "employmentStatus": "Aktif",
+      "passwordSalt": "seed-7-employee",
+      "passwordHash": "154eff13b233ffb13c586d01f84a5af985eff0e0886e34556494e047ca0e88b1",
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    }
+  ],
+  "shiftSchedules": [
+    {
+      "id": 1,
+      "userId": 4,
+      "date": "2026-06-06",
+      "shiftId": 1
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "date": "2026-06-06",
+      "shiftId": 2
+    },
+    {
+      "id": 3,
+      "userId": 7,
+      "date": "2026-06-06",
+      "shiftId": 1
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "date": "2026-06-07",
+      "shiftId": 2
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "date": "2026-06-07",
+      "shiftId": 1
+    },
+    {
+      "id": 6,
+      "userId": 7,
+      "date": "2026-06-07",
+      "shiftId": 1
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "date": "2026-06-05",
+      "shiftId": 1
+    }
+  ],
+  "attendances": [
+    {
+      "id": 1,
+      "userId": 4,
+      "date": "2026-06-05",
+      "clockIn": "2026-06-05T01:55:00.000Z",
+      "clockOut": "2026-06-05T10:05:00.000Z",
+      "clockInLocalTime": "08:55:00",
+      "clockOutLocalTime": "17:05:00",
+      "latIn": -6.2088,
+      "lngIn": 106.8456,
+      "latOut": -6.2088,
+      "lngOut": 106.8456,
+      "branchId": 1,
+      "status": "Hadir",
+      "lateMinutes": 0,
+      "earlyLeaveMinutes": 0,
+      "workMinutes": 490,
+      "withinGeofence": true,
+      "distanceMeters": 0,
+      "wfh": false,
+      "notes": "Seed data",
+      "correctionLog": []
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "date": "2026-06-05",
+      "clockIn": "2026-06-05T06:20:00.000Z",
+      "clockOut": "2026-06-05T14:30:00.000Z",
+      "clockInLocalTime": "13:20:00",
+      "clockOutLocalTime": "21:30:00",
+      "latIn": -6.2088,
+      "lngIn": 106.8456,
+      "latOut": -6.2088,
+      "lngOut": 106.8456,
+      "branchId": 1,
+      "status": "Terlambat",
+      "lateMinutes": 10,
+      "earlyLeaveMinutes": 30,
+      "workMinutes": 430,
+      "withinGeofence": true,
+      "distanceMeters": 0,
+      "wfh": false,
+      "notes": "Seed data",
+      "correctionLog": []
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "date": "2026-06-06",
+      "clockIn": "2026-06-06T16:37:11.988Z",
+      "clockOut": null,
+      "clockInLocalTime": "23:37:11",
+      "clockOutLocalTime": null,
+      "latIn": -6.2088,
+      "lngIn": 106.8456,
+      "latOut": null,
+      "lngOut": null,
+      "branchId": 1,
+      "status": "Hadir",
+      "lateMinutes": 922,
+      "earlyLeaveMinutes": 0,
+      "workMinutes": 0,
+      "withinGeofence": true,
+      "distanceMeters": 0,
+      "wfh": false,
+      "clockInPhoto": "",
+      "clockOutPhoto": "",
+      "notes": "",
+      "correctionLog": [
+        {
+          "by": 1,
+          "at": "2026-06-06T16:37:45.537Z",
+          "reason": "Koreksi manual HRD",
+          "before": {
+            "id": 6,
+            "userId": 4,
+            "date": "2026-06-06",
+            "clockIn": "2026-06-06T16:37:11.988Z",
+            "clockOut": null,
+            "clockInLocalTime": "23:37:11",
+            "clockOutLocalTime": null,
+            "latIn": -6.2088,
+            "lngIn": 106.8456,
+            "latOut": null,
+            "lngOut": null,
+            "branchId": 1,
+            "status": "Terlambat",
+            "lateMinutes": 922,
+            "earlyLeaveMinutes": 0,
+            "workMinutes": 0,
+            "withinGeofence": true,
+            "distanceMeters": 0,
+            "wfh": false,
+            "clockInPhoto": "",
+            "clockOutPhoto": "",
+            "notes": "",
+            "correctionLog": []
+          }
+        }
+      ]
+    }
+  ],
+  "leaves": [
+    {
+      "id": 1,
+      "userId": 4,
+      "type": "Cuti Tahunan",
+      "startDate": "2026-06-07",
+      "endDate": "2026-06-07",
+      "days": 1,
+      "reason": "Urusan keluarga",
+      "attachmentName": "",
+      "status": "Disetujui",
+      "currentStep": "done",
+      "managerApproverId": 3,
+      "hrApproverId": 1,
+      "history": [
+        {
+          "by": 4,
+          "action": "Diajukan",
+          "comment": "",
+          "at": "2026-06-06T16:24:43.144Z"
+        },
+        {
+          "by": 3,
+          "action": "Disetujui Manager",
+          "comment": "OK",
+          "at": "2026-06-06T16:24:43.144Z"
+        },
+        {
+          "by": 1,
+          "action": "Disetujui HRD",
+          "comment": "",
+          "at": "2026-06-06T16:36:43.363Z"
+        }
+      ],
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:36:43.363Z"
+    },
+    {
+      "id": 2,
+      "userId": 7,
+      "type": "Dinas Luar",
+      "startDate": "2026-06-06",
+      "endDate": "2026-06-06",
+      "days": 1,
+      "reason": "Meeting klien di luar kantor",
+      "attachmentName": "surat-tugas.pdf",
+      "status": "Disetujui",
+      "currentStep": "done",
+      "managerApproverId": 6,
+      "hrApproverId": 2,
+      "history": [
+        {
+          "by": 7,
+          "action": "Diajukan",
+          "comment": "",
+          "at": "2026-06-06T16:24:43.144Z"
+        },
+        {
+          "by": 6,
+          "action": "Disetujui Manager",
+          "comment": "Agenda sales",
+          "at": "2026-06-06T16:24:43.144Z"
+        },
+        {
+          "by": 2,
+          "action": "Disetujui HRD",
+          "comment": "Tercatat",
+          "at": "2026-06-06T16:24:43.144Z"
+        }
+      ],
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    }
+  ],
+  "overtimes": [
+    {
+      "id": 1,
+      "userId": 4,
+      "date": "2026-06-06",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "hours": 2,
+      "reason": "Deployment fitur absensi",
+      "status": "Menunggu Manager",
+      "approverId": 3,
+      "costEstimate": 100000,
+      "history": [
+        {
+          "by": 4,
+          "action": "Diajukan",
+          "comment": "",
+          "at": "2026-06-06T16:24:43.144Z"
+        }
+      ],
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "date": "2026-06-05",
+      "startTime": "22:00",
+      "endTime": "23:30",
+      "hours": 1.5,
+      "reason": "Maintenance database",
+      "status": "Disetujui",
+      "approverId": 3,
+      "costEstimate": 75000,
+      "history": [
+        {
+          "by": 5,
+          "action": "Diajukan",
+          "comment": "",
+          "at": "2026-06-06T16:24:43.144Z"
+        },
+        {
+          "by": 3,
+          "action": "Disetujui",
+          "comment": "Sesuai jadwal maintenance",
+          "at": "2026-06-06T16:24:43.144Z"
+        }
+      ],
+      "createdAt": "2026-06-06T16:24:43.144Z",
+      "updatedAt": "2026-06-06T16:24:43.144Z"
+    }
+  ],
+  "holidays": [
+    {
+      "id": 1,
+      "date": "2026-01-01",
+      "name": "Tahun Baru Masehi",
+      "type": "Nasional"
+    },
+    {
+      "id": 2,
+      "date": "2026-05-01",
+      "name": "Hari Buruh",
+      "type": "Nasional"
+    },
+    {
+      "id": 3,
+      "date": "2026-08-17",
+      "name": "Hari Kemerdekaan RI",
+      "type": "Nasional"
+    }
+  ],
+  "announcements": [
+    {
+      "id": 3,
+      "title": "halo",
+      "body": "halo",
+      "audience": "all",
+      "createdBy": 1,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 1,
+      "title": "Reminder absensi",
+      "body": "Jangan lupa check-in sebelum jam kerja dan check-out setelah selesai bekerja.",
+      "audience": "all",
+      "createdBy": 2,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 2,
+      "title": "Import karyawan via CSV",
+      "body": "HRD dapat mengunggah data karyawan baru melalui menu Karyawan.",
+      "audience": "hrd_admin",
+      "createdBy": 1,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": 17,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:47:05.355Z"
+    },
+    {
+      "id": 16,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:41:51.063Z"
+    },
+    {
+      "id": 15,
+      "actorId": 3,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 3,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:40:29.395Z"
+    },
+    {
+      "id": 14,
+      "actorId": 4,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 4,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:38:32.234Z"
+    },
+    {
+      "id": 13,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:38:29.258Z"
+    },
+    {
+      "id": 12,
+      "actorId": 1,
+      "action": "ANNOUNCEMENT_CREATED",
+      "entity": "announcement",
+      "entityId": 3,
+      "details": "halo",
+      "at": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 11,
+      "actorId": 1,
+      "action": "ATTENDANCE_CORRECTED",
+      "entity": "attendance",
+      "entityId": 6,
+      "details": "Koreksi manual HRD",
+      "at": "2026-06-06T16:37:45.537Z"
+    },
+    {
+      "id": 10,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:37:37.047Z"
+    },
+    {
+      "id": 9,
+      "actorId": 4,
+      "action": "CLOCK_IN",
+      "entity": "attendance",
+      "entityId": 6,
+      "details": "Dhani Saputra check-in Terlambat.",
+      "at": "2026-06-06T16:37:11.988Z"
+    },
+    {
+      "id": 8,
+      "actorId": 4,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 4,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:36:48.882Z"
+    },
+    {
+      "id": 7,
+      "actorId": 1,
+      "action": "LEAVE_HRD_APPROVED",
+      "entity": "leave",
+      "entityId": 1,
+      "details": "Disetujui HRD",
+      "at": "2026-06-06T16:36:43.363Z"
+    },
+    {
+      "id": 6,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:36:23.575Z"
+    },
+    {
+      "id": 5,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:32:47.082Z"
+    },
+    {
+      "id": 4,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:32:10.913Z"
+    },
+    {
+      "id": 3,
+      "actorId": 1,
+      "action": "LOGIN",
+      "entity": "user",
+      "entityId": 1,
+      "details": "Login dari ::1",
+      "at": "2026-06-06T16:31:15.771Z"
+    },
+    {
+      "id": 1,
+      "actorId": 1,
+      "action": "SYSTEM_SEEDED",
+      "entity": "database",
+      "entityId": "seed",
+      "details": "Initial demo data",
+      "at": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 2,
+      "actorId": 3,
+      "action": "LEAVE_MANAGER_APPROVED",
+      "entity": "leave",
+      "entityId": 1,
+      "details": "Seed approval",
+      "at": "2026-06-06T16:24:43.144Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 13,
+      "userId": 7,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 12,
+      "userId": 6,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 11,
+      "userId": 5,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 10,
+      "userId": 4,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": true,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "title": "Pengumuman: halo",
+      "body": "halo",
+      "read": false,
+      "createdAt": "2026-06-06T16:38:07.341Z"
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "title": "Pengajuan disetujui",
+      "body": "Cuti Tahunan Anda sudah disetujui.",
+      "read": true,
+      "createdAt": "2026-06-06T16:36:43.363Z"
+    },
+    {
+      "id": 1,
+      "userId": 2,
+      "title": "Approval cuti menunggu",
+      "body": "Dhani Saputra menunggu persetujuan HRD.",
+      "read": false,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "title": "Lembur baru",
+      "body": "Dhani Saputra mengajukan lembur hari ini.",
+      "read": false,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 3,
+      "userId": 4,
+      "title": "Pengajuan cuti diproses",
+      "body": "Cuti Anda sudah disetujui Manager dan menunggu HRD.",
+      "read": true,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "Database siap",
+      "body": "Data demo absensi berhasil dibuat.",
+      "read": true,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    },
+    {
+      "id": 5,
+      "userId": 6,
+      "title": "Kalender tim",
+      "body": "Gita sedang dinas luar hari ini.",
+      "read": false,
+      "createdAt": "2026-06-06T16:24:43.144Z"
+    }
+  ]
+}
